@@ -1,6 +1,6 @@
 import logo from './logo.svg';
 import './Classcomponent.css';
-import React, { Component } from 'react';
+import React from 'react';
 
 class Classcomponent extends React.Component {
     render() {

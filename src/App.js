@@ -1,8 +1,14 @@
 import logo from './logo.svg';
 import './App.css';
 import Classcomponent from './Classcomponent';
+import DocViewer, { DocViewerRenderers } from "@iamjariwala/react-doc-viewer";
+import "@iamjariwala/react-doc-viewer/dist/index.css";
+
 
 function App() {
+  const docs = [
+    { uri: "/resume.docx" }, // Loads from public/sample.pdf
+  ];
   return (
     <div className="App">
       <h1>Function Component</h1>
@@ -22,7 +28,11 @@ function App() {
       </header>
 
       <Mark />
-      <Classcomponent />
+     
+      <div style={{ height: "100vh" }}>
+      <DocViewer documents={docs} pluginRenderers={DocViewerRenderers} />
+    </div>
+     <Classcomponent />
     </div>
   );
 }
@@ -34,5 +44,7 @@ function Mark()
     </div>
   );
 }
+
+
 
 export default App;
